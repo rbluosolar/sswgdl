@@ -1,4 +1,4 @@
-# README.md — Run SSW with GDL (macOS + tcsh)
+# Run SSW with GDL (macOS + tcsh)
 
 ## Goal
 
