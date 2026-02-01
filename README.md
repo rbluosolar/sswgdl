@@ -5,7 +5,7 @@ Our tests are very limited, it is not guaranteed that all SSW programs work well
 Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) and  [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
-# Software requirements
+## Software requirements
 * tcsh: https://www.tcsh.org/
 * SSW: http://www.lmsal.com/solarsoft/
   `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
@@ -18,7 +18,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
     * Gentoo: /usr/local/share/gdl
     * macOS: /opt/local/share/gnudatalanguage
 
-# Make GDL “pretend” to be IDL
+## Make GDL “pretend” to be IDL
 * If you install GDL from https://github.com/gnudatalanguage/gdl/releases
   ```
   ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
@@ -36,7 +36,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   ln -s $command_gdl $GDL_DIR/bin/idl
   ```
 
-# launch SSW with a script
+## Launch SSW with a script
 
 * Create a file `sswgdl` (can be any other name) with the following content:
 
