@@ -71,7 +71,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
     ```
     export PATH=$HOME/bin:$PATH
     ```
-    then `$HOME/bin` is a `$path` of the system. If `sswgdl` is putted in a `$path`, you can directly run SSW with GDL
+    then `$HOME/bin` is a `$path` of the system. If `sswgdl` is putted in a `$path`, you can directly run SSW with GDL at any directory
     ```
     sswgdl
     ``` 
