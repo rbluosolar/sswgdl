@@ -53,6 +53,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   # the text `$SSW` in this line is unnessary to change
   setenv GDL_PATH $IDL_DIR/lib:+$SSW/:+$HOME/your/private/pro/path
 
+  # set your instruments
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
 
   # the text `$SSW` in this line is unnessary to change
