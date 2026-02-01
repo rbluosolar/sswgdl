@@ -49,7 +49,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   setenv IDL_DIR $GDL_DIR
 
   # Set GDL_PATH that including $SSW, the text `$SSW` in this line is unnessary to change
-  setenv GDL_PATH $IDL_DIR/lib:+$SSW
+  setenv GDL_PATH $IDL_DIR/lib:+$HOME/your/private/pro/path:+$SSW
 
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
 
