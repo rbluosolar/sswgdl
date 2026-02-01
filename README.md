@@ -42,15 +42,18 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   ```tcsh
   #!/bin/tcsh
 
+  # please replace the text `$SSW` to the SSW top level path
   setenv SSW $SSW
 
-  # Point IDL_DIR to the GDL top level path
+  # Point IDL_DIR to the GDL top level path,  please replace the text `$GDL_DIR` the SSW top level path
   setenv IDL_DIR $GDL_DIR
 
-  # Set GDL_PATH that including $SSW
+  # Set GDL_PATH that including $SSW, the text `$SSW` in this line is unnessary to change
   setenv GDL_PATH $IDL_DIR/lib:+$SSW
 
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
+
+  # the text `$SSW` in this line is unnessary to change
   source $SSW/gen/setup/setup.ssw
 
   # Launch SSW with GDL
