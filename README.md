@@ -1,138 +1,79 @@
-# Run SSW with GDL (macOS + tcsh)
+# Run SSW with GDL
 
-## Goal
+Our tests are very limited, it is not guaranteed that all SSW programs work well with GDL. And we only tested our way in Linux and macOS, while this way should also work well in Windows.
 
-Make **SSW** think it is launching **IDL**, while it actually runs **GDL**.
+Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) and  [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
-This setup:
+-----------------------------
+# Software requirements
+* tcsh: https://www.tcsh.org/
+* SSW: http://www.lmsal.com/solarsoft/
+  `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
+* GDL: https://gnudatalanguage.github.io/downloads.html, 
+  `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
+  * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package
+  * If you install GDL from the software source of the system, `$GDL_DIR` could be:
+    * Ubuntu & Fedora:  /usr/share/gnudatalanguage
+    * ArchLinux: /usr/lib/gdl
+    * Gentoo: /usr/local/share/gdl
+    * macOS: /opt/local/share/gnudatalanguage
 
-- provides an `idl` executable where SSW expects it,
-- prepends GDL’s built-in library path to `IDL_PATH`,
-- keeps SSW’s normal startup workflow.
+# Make GDL “pretend” to be IDL
+* If you install GDL from https://github.com/gnudatalanguage/gdl/releases
+  ```
+  ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
+  ```
+* If you install GDL from the software source of the system, please make a directory `bin/` under `$GDL_DIR`
+  ```
+  mkdir $GDL_DIR/bin/
+  ```
+  please locate the position of `$command_gdl` in the system
+  ```
+  whereis gdl
+  ```
+  It displays `/opt/local/bin/gdl` in macOS, it displays `/usr/bin/gdl` in Ubuntu. Then execute
+  ```
+  ln -s $command_gdl $GDL_DIR/bin/idl
+  ```
 
-> No system-wide symlink (e.g. `/opt/local/bin/idl`) is used.
+# launch SSW with a script
 
-## Requirements
+* Create a file `sswgdl` (can be any other name) with the following content:
 
-- macOS
-- `tcsh`
-- SSW installed locally
-- GDL installed locally
+  ```tcsh
+  #!/bin/tcsh
 
-## Placeholders (replace with your own paths)
+  setenv SSW $SSW
 
-- `<SSW_ROOT>`: the root directory of your SSW installation
-- `<GDL_PREFIX>`: the installation prefix of your GDL (contains `bin/gdl`)
+  # Point IDL_DIR to the GDL top level path
+  setenv IDL_DIR $GDL_DIR
 
-Expected:
+  # Set GDL_PATH that including $SSW
+  setenv GDL_PATH $IDL_DIR/lib:+$SSW
 
-- GDL executable: `<GDL_PREFIX>/bin/gdl`
-- GDL libraries (one of these usually exists; use the one that matches your install):
-  - `<GDL_PREFIX>/share/gnudatalanguage/lib/`
-  - `<GDL_PREFIX>/gnudatalanguage/lib/`
+  setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
+  source $SSW/gen/setup/setup.ssw
 
-## Steps (1–5)
-
-### 1) Make GDL “pretend” to be `idl` (local symlink only)
-
-SSW typically runs IDL via `$IDL_DIR/bin/idl`. Create a local symlink inside your GDL prefix:
-
-```tcsh
-ln -s <GDL_PREFIX>/bin/gdl <GDL_PREFIX>/bin/idl
-```
-
-### 2) Copy `ssw_idl` to `ssw_gdl`
-
-In `<SSW_ROOT>/gen/setup/`:
-
-```tcsh
-cp <SSW_ROOT>/gen/setup/ssw_idl <SSW_ROOT>/gen/setup/ssw_gdl
-chmod +x <SSW_ROOT>/gen/setup/ssw_gdl
-```
-
-### 3) Modify `ssw_gdl` to prepend GDL libraries to `IDL_PATH`
-
-Edit `<SSW_ROOT>/gen/setup/ssw_gdl`. Locate the section that sets `IDL_PATH`, then set:
-
-```tcsh
-# set the darn thing.
-setenv GDL_LIB "+<GDL_PREFIX>/share/gnudatalanguage/lib/"
-
-setenv IDL_PATH "$GDL_LIB":"$TEMP2"
-alias idltool $IDL_DIR/bin/idltool
-
-# call IDL with any arguments (actually GDL via the idl symlink)
-onintr -                                # allow ctrl c in idl
-$IDL_DIR/bin/idl $command               # no alias (see comment) slf 30-Jul
-
-cleanup:
-onintr -
-```
-
-### 4) Add an `sswgdl` alias in `setup.ssw`
-
-Edit `<SSW_ROOT>/gen/setup/setup.ssw`. In the “Define idl command for SSW” block, add:
-
-```tcsh
-alias sswgdl $SSW/gen/setup/ssw_gdl
-```
-
-Example result:
-
-```tcsh
-###################### Define idl command for SSW ###########################
-alias sswidl $SSW/gen/setup/ssw_idl
-alias sswgdl $SSW/gen/setup/ssw_gdl
-alias sswidlde $SSW/gen/setup/ssw_idlde
-if ($qdisp) echo ""
-if ($qdisp) echo "Type <sswidl> to start SSW IDL"
-##############################################################################
-```
-
-### 5) Create a launcher script `ssw.csh`
-
-Create `ssw.csh`:
-
-```tcsh
-#!/bin/tcsh
-
-setenv SSW <SSW_ROOT>
-setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
-
-# Point IDL_DIR to the GDL installation prefix
-setenv IDL_DIR "<GDL_PREFIX>"
-
-source $SSW/gen/setup/setup.ssw
-
-# Launch SSW with GDL
-sswgdl
-```
-
-Make it executable and run:
-
-```tcsh
-chmod +x ssw.csh
-./ssw.csh
-```
-
-## Quick checks
-
-### Confirm `idl` points to `gdl`
-
-```tcsh
-ls -l <GDL_PREFIX>/bin/idl
-```
-
-### Confirm the path inside the session
-
-At the GDL/IDL prompt:
-
-```idl
-PRINT, !PATH
-```
-
-You should see your GDL lib path at the beginning, followed by SSW paths.
-
-## Notes / Limitations
-
-GDL is not 100% IDL-compatible. Some IDL-specific or licensed components may not work under GDL.
+  # Launch SSW with GDL
+  sswidl
+  ```
+* Make the script executable
+  ```tcsh
+  chmod +x sswgdl
+  ```
+* launch SSW with GDL in a terminal:
+  ```
+  ./sswgdl
+  ```
+  * note: put `sswgdl` to the `$path` of the system is suggested, e.g. you can append this line to `~/.bashrc`
+    ```
+    export PATH=$HOME/bin:$PATH
+    ```
+    then `$HOME/bin` is a `$path` of the system. If `sswgdl` is putted in a `$path`, you can directly run SSW with GDL
+    ```
+    sswgdl
+    ``` 
+* Confirm the path inside the session
+  ```idl
+  GDL> PRINT, !PATH
+  ```
