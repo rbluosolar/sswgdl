@@ -60,7 +60,7 @@ Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rb
   # the text `$SSW` in this line is unnessary to change
   source $SSW/gen/setup/setup.ssw
 
-  # Launch SSW with GDL
+  # Launch SSW
   sswidl
   ```
 * Make the script executable
