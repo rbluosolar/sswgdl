@@ -45,7 +45,8 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   # please replace the text `$SSW` to the SSW top level path
   setenv SSW $SSW
 
-  # Point IDL_DIR to the GDL top level path, please replace the text `$GDL_DIR` the GDL top level path
+  # Point IDL_DIR to the GDL top level path
+  # please replace the text `$GDL_DIR` the GDL top level path
   setenv IDL_DIR $GDL_DIR
 
   # Set GDL_PATH that including $SSW and your private path for *.pro
