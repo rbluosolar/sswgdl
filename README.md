@@ -48,9 +48,9 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
   # Point IDL_DIR to the GDL top level path, please replace the text `$GDL_DIR` the GDL top level path
   setenv IDL_DIR $GDL_DIR
 
-  # Set GDL_PATH that including your private path for *.pro and $SSW
+  # Set GDL_PATH that including $SSW and your private path for *.pro
   # the text `$SSW` in this line is unnessary to change
-  setenv GDL_PATH $IDL_DIR/lib:+$HOME/your/private/pro/path:+$SSW
+  setenv GDL_PATH $IDL_DIR/lib:+$SSW/:+$HOME/your/private/pro/path
 
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
 
