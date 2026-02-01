@@ -2,7 +2,7 @@
 
 Our tests are very limited, it is not guaranteed that all SSW programs work well with GDL. And we only tested our way in Linux and macOS, while this way should also work well in Windows.
 
-Please feel free to report any issues [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
+Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
 ## Software requirements
