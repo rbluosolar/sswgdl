@@ -7,15 +7,16 @@ Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rb
 -----------------------------
 ## Software requirements
 * tcsh: https://www.tcsh.org/
-* SSW: http://www.lmsal.com/solarsoft/, `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
-* GDL: https://gnudatalanguage.github.io/downloads.html, 
-  `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
-  * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package
-  * If you install GDL from the software source of the system, `$GDL_DIR` could be:
-    * Ubuntu & Fedora:  /usr/share/gnudatalanguage
-    * ArchLinux: /usr/lib/gdl
-    * Gentoo: /usr/local/share/gdl
-    * macOS: /opt/local/share/gnudatalanguage
+* SSW: http://www.lmsal.com/solarsoft/
+  * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
+* GDL: https://gnudatalanguage.github.io/downloads.html
+  * `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
+    * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package
+    * If you install GDL from the software source of the system, `$GDL_DIR` could be:
+      * Ubuntu & Fedora:  /usr/share/gnudatalanguage
+      * ArchLinux: /usr/lib/gdl
+      * Gentoo: /usr/local/share/gdl
+      * macOS: /opt/local/share/gnudatalanguage
 
 ## Make GDL “pretend” to be IDL
 * If you install GDL from https://github.com/gnudatalanguage/gdl/releases
