@@ -7,8 +7,7 @@ Welcome for reporting issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.
 -----------------------------
 ## Software requirements
 * tcsh: https://www.tcsh.org/
-* SSW: http://www.lmsal.com/solarsoft/
-  * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
+* SSW: http://www.lmsal.com/solarsoft/, `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
 * GDL: https://gnudatalanguage.github.io/downloads.html, 
   `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
   * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package
