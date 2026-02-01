@@ -11,7 +11,7 @@ Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rb
   * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
 * GDL: https://gnudatalanguage.github.io/downloads.html
   * `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
-    * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package
+    * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package, it should contain a subdirectory 'lib/'
     * If you install GDL from the software source of the system, `$GDL_DIR` could be:
       * Ubuntu & Fedora:  /usr/share/gnudatalanguage
       * ArchLinux: /usr/lib/gdl
