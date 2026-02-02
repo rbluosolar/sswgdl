@@ -19,7 +19,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       * Fedora: `yum install gdl`
       * ArchLinux: `pacman -S gnudatalanguage`
       * Gento: `emerge gdl`
-      * macOS:`port install gnudatalanguage` or `fink install gdl`
+      * macOS: `port install gnudatalanguage` or `fink install gdl`
     * then `$GDL_DIR` should be:
       * Ubuntu & Fedora: `/usr/share/gnudatalanguage`
       * ArchLinux: `/usr/lib/gdl`
