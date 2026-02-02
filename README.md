@@ -1,8 +1,10 @@
 # Run SSW with GDL
 
-Our tests are very limited, it is not guaranteed that all SSW programs work well with GDL. And we only tested our way in Linux and macOS, while this way should also work well in Windows.
+The idea is to make GDL pretend to be IDL.
 
-Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
+GDL has full syntax compatibility with IDL 7.1, and has part of syntax compatibility with IDL 8.x, therefore it is not guaranteed that all SSW programs work well with GDL based our very limited tests. And we only tested our way in Linux and macOS, while this way should also work well in Windows.
+
+Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
 ## Software requirements
@@ -11,30 +13,41 @@ Please feel free to report any issues to [Mr. Luo, RunBin (罗润彬)](mailto:rb
   * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
 * GDL: https://gnudatalanguage.github.io/downloads.html
   * `$GDL_DIR` in the following file `sswgdl` is the GDL top level path
-    * If you install GDL from https://github.com/gnudatalanguage/gdl/releases, `$GDL_DIR` is where you `unzip` the package, it should contain a subdirectory `lib/`
-    * If you install GDL from the software source of the system, `$GDL_DIR` could be:
-      * Ubuntu & Fedora:  /usr/share/gnudatalanguage
-      * ArchLinux: /usr/lib/gdl
-      * Gentoo: /usr/local/share/gdl
-      * macOS: /opt/local/share/gnudatalanguage
+  * if you install GDL from the software source of the system
+    * command of install:
+      * Ubuntu/Debian: `apt install gnudatalanguage`
+      * Fedora: `yum install gdl`
+      * ArchLinux: `pacman -S gnudatalanguage`
+      * Gento: `emerge gdl`
+      * macOS:`port install gnudatalanguage` or `fink install gdl`
+    * then `$GDL_DIR` should be:
+      * Ubuntu & Fedora: `/usr/share/gnudatalanguage`
+      * ArchLinux: `/usr/lib/gdl`
+      * Gentoo: `/usr/local/share/gdl`
+      * macOS: `/opt/local/share/gnudatalanguage`
+    * please locate the position of $command_gdl in the system
+      ```
+      whereis gdl
+      ```
+      It displays `/opt/local/bin/gdl` in macOS, it displays `/usr/bin/gdl` in Ubuntu. Please execute the following command to make GDL pretend to be IDL:
+      ```
+      mkdir $GDL_DIR/bin/
+      ln -s $command_gdl $GDL_DIR/bin/idl
+      ```
+  * If you download GDL from https://github.com/gnudatalanguage/gdl/releases
+    * `$GDL_DIR` is where you `unzip` the package, it should contain `bin/gdl`
+    * please execute the following command to make GDL pretend to be IDL.
+      ```
+      ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
+      ```
+  * If you compile the project from https://github.com/gnudatalanguage/gdl 
+    * `$GDL_DIR` is where you build the project, it should contain `src/gdl`
 
-## Make GDL “pretend” to be IDL
-* If you install GDL from https://github.com/gnudatalanguage/gdl/releases
-  ```
-  ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
-  ```
-* If you install GDL from the software source of the system, please make a directory `bin/` under `$GDL_DIR`
-  ```
-  mkdir $GDL_DIR/bin/
-  ```
-  please locate the position of `$command_gdl` in the system
-  ```
-  whereis gdl
-  ```
-  It displays `/opt/local/bin/gdl` in macOS, it displays `/usr/bin/gdl` in Ubuntu. Then execute
-  ```
-  ln -s $command_gdl $GDL_DIR/bin/idl
-  ```
+    * please execute the following command to make GDL pretend to be IDL.
+      ```
+      mkdir $GDL_DIR/bin/
+      ln -s $GDL_DIR/src/gdl $GDL_DIR/bin/idl
+      ```
 
 ## Launch SSW with a script
 
