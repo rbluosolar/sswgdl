@@ -46,7 +46,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       7z x lib.7z o lib
       ```
   * If you compile the project from https://github.com/gnudatalanguage/gdl 
-    * `$GDL_DIR` is where you build the project, it should contain `src/gdl`
+    * `$GDL_DIR` is where you build the project, it should contain `src/gdl` after the compilation
 
     * please execute the following command to make GDL pretend to be IDL.
       ```
@@ -57,7 +57,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       ```
       7z x lib.7z o lib
       ```
-  * **Potential issue**: If launching SSW with GDL 1.0.0, `% Cannot apply operation to datatype STRING` will be printed. It is unclear which specific programs of SSW are affected, but this issue will not happen with GDL 1.1.3
+  * **A potential issue**: Launching SSW with GDL 1.0.0 will print `% Cannot apply operation to datatype STRING`. It is unclear which specific programs of SSW are affected, but this issue will not happen with GDL 1.1.3
 
 ## Launch SSW with a script
 
