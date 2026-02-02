@@ -34,7 +34,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $command_gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is `$GDL_DIR/lib`
+    * `$GDL_LIB` in the following file `sswgdl` is `$GDL_DIR/lib`, `lib.7z` is unnecessary in this case
   * If you download GDL from https://github.com/gnudatalanguage/gdl/releases
     * `$GDL_DIR` is where you `unzip` the package, it should contain `bin/gdl`
     * please execute the following command to make GDL pretend to be IDL.
