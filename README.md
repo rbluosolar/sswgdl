@@ -7,7 +7,7 @@ GDL is fully syntax-compatible with IDL 7.1 and partially compatible with IDL 8.
 Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
-## Software preparations
+## Software requirements
 * tcsh: https://www.tcsh.org/
 * SSW: http://www.lmsal.com/solarsoft/
   * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
@@ -41,7 +41,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       ```
       ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpack from `lib.7z`
+    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpacked from `lib.7z`
       ```
       7z x lib.7z o lib
       ```
@@ -53,7 +53,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $GDL_DIR/src/gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpack from `lib.7z`
+    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpacked from `lib.7z`
       ```
       7z x lib.7z o lib
       ```
