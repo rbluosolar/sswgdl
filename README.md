@@ -25,7 +25,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       * ArchLinux: `/usr/lib/gdl`
       * Gentoo: `/usr/local/share/gdl`
       * macOS: `/opt/local/share/gnudatalanguage`
-    * please locate the position of $command_gdl in the system
+    * please locate the position of `$command_gdl` in the system
       ```
       whereis gdl
       ```
@@ -93,7 +93,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
   ```tcsh
   chmod u+x sswgdl
   ```
-* launch SSW with GDL in a terminal:
+* Launch SSW with GDL in a terminal:
   ```
   ./sswgdl
   ```
