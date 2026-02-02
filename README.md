@@ -34,11 +34,16 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $command_gdl $GDL_DIR/bin/idl
       ```
+    * `$GDL_LIB` in the following file `sswgdl` is `$GDL_DIR/lib`
   * If you download GDL from https://github.com/gnudatalanguage/gdl/releases
     * `$GDL_DIR` is where you `unzip` the package, it should contain `bin/gdl`
     * please execute the following command to make GDL pretend to be IDL.
       ```
       ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
+      ```
+    * `$GDL_LIB` in the following file `sswgdl` is `lib/` unpack from `lib.7z`
+      ```
+      7z x lib.7z o lib
       ```
   * If you compile the project from https://github.com/gnudatalanguage/gdl 
     * `$GDL_DIR` is where you build the project, it should contain `src/gdl`
@@ -48,6 +53,11 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $GDL_DIR/src/gdl $GDL_DIR/bin/idl
       ```
+    * `$GDL_LIB` in the following file `sswgdl` is `lib/` unpack from `lib.7z`
+      ```
+      7z x lib.7z o lib
+      ```
+  * **Potential issue**: If launching SSW with GDL 1.0.0, `% Cannot apply operation to datatype STRING` will be printed. It is unclear which specific programs of SSW are affected, but this issue will not happen with GDL 1.1.3
 
 ## Launch SSW with a script
 
@@ -63,9 +73,12 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
   # please replace the text `$GDL_DIR` the GDL top level path
   setenv IDL_DIR $GDL_DIR
 
+  # please replace the text `$GDL_LIB` by the directory of `lib/`
+  # setenv GDL_LIB $GDL_LIB
+
   # Set GDL_PATH that including $SSW and your private path for *.pro
   # the text `$SSW` in this line is unnessary to change
-  setenv GDL_PATH $IDL_DIR/lib:+$SSW/:+$HOME/your/private/pro/path
+  setenv GDL_PATH $GDL_LIB/:+$SSW/:+$HOME/your/private/pro/path
 
   # set your instruments
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
