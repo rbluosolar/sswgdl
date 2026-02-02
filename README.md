@@ -29,7 +29,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       ```
       whereis gdl
       ```
-      It displays `/opt/local/bin/gdl` in macOS, it displays `/usr/bin/gdl` in Ubuntu. Please execute the following command to make GDL pretend to be IDL:
+      It would display `/opt/local/bin/gdl` in macOS, it would display `/usr/bin/gdl` in Ubuntu. Please execute the following command to make GDL pretend to be IDL:
       ```
       mkdir $GDL_DIR/bin/
       ln -s $command_gdl $GDL_DIR/bin/idl
