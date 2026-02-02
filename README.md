@@ -74,7 +74,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
   setenv IDL_DIR $GDL_DIR
 
   # please replace the text `$GDL_LIB` by the full path of `lib/`
-  # setenv GDL_LIB $GDL_LIB
+  setenv GDL_LIB $GDL_LIB
 
   # Set GDL_PATH that including $SSW and your private path for *.pro
   # the text `$SSW` in this line is unnessary to change
