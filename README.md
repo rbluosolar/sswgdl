@@ -91,7 +91,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
   ```
 * Make the script executable
   ```tcsh
-  chmod +x sswgdl
+  chmod u+x sswgdl
   ```
 * launch SSW with GDL in a terminal:
   ```
