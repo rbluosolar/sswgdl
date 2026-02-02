@@ -7,7 +7,7 @@ GDL is fully syntax-compatible with IDL 7.1 and partially compatible with IDL 8.
 Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
-## Software requirements
+## Software preparations
 * tcsh: https://www.tcsh.org/
 * SSW: http://www.lmsal.com/solarsoft/
   * `$SSW` in the following file `sswgdl` is the SSW top level path, e.g. `/usr/local/ssw`,`$HOME/ssw`, `C:\ssw`
