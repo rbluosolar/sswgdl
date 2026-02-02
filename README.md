@@ -41,7 +41,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       ```
       ln -s $GDL_DIR/bin/gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is `lib/` unpack from `lib.7z`
+    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpack from `lib.7z`
       ```
       7z x lib.7z o lib
       ```
@@ -53,7 +53,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $GDL_DIR/src/gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is `lib/` unpack from `lib.7z`
+    * `$GDL_LIB` in the following file `sswgdl` is the full path of `lib/` unpack from `lib.7z`
       ```
       7z x lib.7z o lib
       ```
