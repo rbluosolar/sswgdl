@@ -50,7 +50,7 @@ Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:
       mkdir $GDL_DIR/bin/
       ln -s $GDL_DIR/src/gdl $GDL_DIR/bin/idl
       ```
-    * `$GDL_LIB` in the following file `sswgdl` is `$GDL_DIR/src/pro
+    * `$GDL_LIB` in the following file `sswgdl` is `$GDL_DIR/src/pro`
   * **A potential issue**: Launching SSW with GDL 1.0.0 will print `% Cannot apply operation to datatype STRING`. It is unclear which specific programs of SSW are affected, but this issue will not happen with GDL 1.1.3
 
 ## Launch SSW with a script
