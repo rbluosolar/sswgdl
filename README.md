@@ -4,7 +4,7 @@ The idea is to make GDL pretend to be IDL.
 
 GDL is fully syntax-compatible with IDL 7.1 and partially compatible with IDL 8.x. Due to the limited scope of our tests, compatibility with all SSW programs is not guaranteed. And we only tested our way in Linux and macOS, while this way should also work well in Windows.
 
-Please address comments and suggestions to [Mr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
+Please address comments and suggestions to [Dr. Luo, RunBin (罗润彬)](mailto:rbluo@mail.ustc.edu.cn) or [Dr. Chen, Jun (陈俊)](mailto:chenjun@pmo.ac.cn)
 
 -----------------------------
 ## Software preparations
