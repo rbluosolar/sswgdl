@@ -72,7 +72,7 @@ Please address comments and suggestions to [Dr. Luo, RunBin (罗润彬)](mailto:
 
   # Set GDL_PATH that including $SSW and your private path for *.pro
   # the text `$SSW` in this line is unnessary to change
-  setenv GDL_PATH $GDL_LIB/:+$SSW/:+$HOME/your/private/pro/path
+  setenv GDL_PATH \+$GDL_LIB/:+$SSW/:+$HOME/your/private/pro/path
 
   # set your instruments
   setenv SSW_INSTR "gen sdo aia hmi xrt hessi ontology"
